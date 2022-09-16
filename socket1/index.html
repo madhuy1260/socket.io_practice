@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Learning</title>
+  </head>
+  <body>
+    <h1 id="msg"></h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      //  let socket = io("/sell");
+      let socket = io("/buy"); //accessing the namespace of the server here
+      socket.on("MyEvent", function (data) {
+        //grasps the message sent from server to here
+        document.getElementById("msg").innerHTML = data;
+        //    document.write(msg)
+        //    document.getElementById("Mytime").innerHTML = "";
+        //    document.getElementById("Mytime").innerHTML = data;
+      });
+    </script>
+  </body>
+</html>
